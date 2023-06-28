@@ -25,6 +25,8 @@ function Trending() {
                 `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=20`
               );
               const data = await api.json();
+
+              localStorage.setItem("trending", JSON.stringify(data.recipes));
               setTrending(data.recipes);
               console.log(data.recipes);
   

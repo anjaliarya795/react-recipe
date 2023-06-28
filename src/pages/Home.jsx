@@ -5,6 +5,7 @@ import Trending from '../components/Trending'
 function Home() {
   return (
     <div>
+      <Veggie/>
       <Trending/>
     </div>
   )
