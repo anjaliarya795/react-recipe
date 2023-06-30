@@ -4,6 +4,8 @@ import "@splidejs/splide/dist/css/splide.min.css";
 import { Wrapper } from './styled-components/Wrapper'
 import { Card } from './styled-components/Card'
 import { Gradient } from './styled-components/Gradient'
+import {Link} from 'react-router-dom'
+
 
 function Trending() {
 
@@ -57,9 +59,11 @@ function Trending() {
                   return (
                     <SplideSlide key ={ recipe.id}>
                         <Card>
-                          <p>{recipe.title}</p>
-                          <img src={recipe.image} alt={recipe.title} />
+                          <Link to={'/recipe/' + recipe.id}>
+                            <p>{recipe.title}</p>
+                            <img src={recipe.image} alt={recipe.title} />
                           <Gradient />
+                          </Link>
                         </Card>
                     </SplideSlide>
                   )
